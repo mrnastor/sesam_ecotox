@@ -289,6 +289,8 @@ export const baseStyles = css`
     width: 120px;
     margin-right: 6px;
     display: inline-block;
+    height: 60px;
+    width: auto;
   }
   .navBarUL li {
     list-style-type: none;

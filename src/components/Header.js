@@ -148,7 +148,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   </li>
                 ) : null}
 
-                {tweetText !== '' ? (
+                {/* {tweetText !== '' ? (
                   <li>
                     <a
                       href={'https://twitter.com/intent/tweet?&text=' + tweetText}
@@ -180,13 +180,13 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                       Star
                     </GitHubButton>
                   </li>
-                ) : null}
-                <li>
+                ) : null} */}
+                {/* <li>
                   <DarkModeSwitch
                     isDarkThemeActive={isDarkThemeActive}
                     toggleActiveTheme={toggleActiveTheme}
                   />
-                </li>
+                </li> */}
               </ul>
             </div>
           </nav>
