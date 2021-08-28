@@ -344,7 +344,7 @@ export const baseStyles = css`
   .socialWrapper li a {
     display: contents;
   }
-  .discordBtn, .twitterBtn {
+  .discordBtn, .twitterBtn, facebookBtn {
     border-radius: 4px;
     border: solid 1px #d1d2d3;
     background-color: #f1f5f8;
@@ -364,6 +364,7 @@ export const baseStyles = css`
   .discordBtn img {
     width: 10px !important;
   }
+
   .discordBtn:hover, .twitterBtn:hover {
     opacity: 1;
   }

@@ -8,6 +8,7 @@ import Loadable from 'react-loadable';
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import appLogo from'./images/ecotox_logo.png';
+import fbIcon from'./images/fbicon.svg';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
 const help = require('./images/help.svg');
@@ -116,8 +117,15 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
             {config.header.social ? (
               <ul
                 className="socialWrapper visibleMobileView"
-                dangerouslySetInnerHTML={{ __html: config.header.social }}
-              ></ul>
+              >
+                <li>
+                  <a href="https://www.facebook.com/UPLBSESAM.EcotoxLab" target="_blank" rel="noopener">
+                    <div class="twitterBtn">
+                      <img src={fbIcon} alt={'Facebook'}/>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             ) : null}
             {isSearchEnabled ? (
               <div className={'searchWrapper hiddenMobile navBarUL'}>
