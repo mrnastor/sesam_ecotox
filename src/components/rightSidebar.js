@@ -22,6 +22,9 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
+
+      return null;
+
       let navItems = [];
 
       let finalNavItems;

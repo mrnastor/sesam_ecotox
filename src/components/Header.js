@@ -7,6 +7,7 @@ import Loadable from 'react-loadable';
 
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
+import appLogo from'./images/ecotox_logo.png';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
 const help = require('./images/help.svg');
@@ -77,6 +78,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
     `}
     render={data => {
       const logoImg = require('./images/logo.svg');
+      const ecotoxLogoImg = require('./images/ecotox_logo.png');
 
       const twitter = require('./images/twitter.svg');
 
@@ -90,13 +92,14 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
         },
       } = data;
 
+      console.log('lgo', logo)
       const finalLogoLink = logo.link !== '' ? logo.link : 'https://hasura.io/';
 
       return (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
             <div className={'navBarHeader'}>
-              <Link to={finalLogoLink} className={'navBarBrand'}>
+              <Link to={finalLogoLink} className={'navBarBrand'} target="_blank">
                 <img
                   className={'img-responsive displayInline'}
                   src={logo.image !== '' ? logo.image : logoImg}
@@ -105,8 +108,10 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
               </Link>
               <div
                 className={'headerTitle displayInline'}
-                dangerouslySetInnerHTML={{ __html: headerTitle }}
-              />
+              >
+                <a href='/'><img class='img-responsive appLogo' src={appLogo} alt='Ecotox logo' /></a>
+              </div>
+
             </div>
             {config.header.social ? (
               <ul

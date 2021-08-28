@@ -227,11 +227,15 @@ export const baseStyles = css`
     line-height: 1.5;
     font-weight: 300;
     color: #fff !important;
-    margin-top: 16px;
     text-transform: uppercase;
   }
   .headerTitle a {
     color: #fff;
+  }
+
+  .headerTitle .appLogo {
+    height: 60px;
+    width: auto;
   }
 
   .headerTitle a:hover {
@@ -257,7 +261,7 @@ export const baseStyles = css`
     padding: 0 !important;
   }
   .navBarDefault {
-    background-color: #001934;
+    background-color: #DDDDDD;
     border-radius: 0;
     border-top: 0;
     margin-bottom: 0;
@@ -759,6 +763,7 @@ export const baseStyles = css`
       padding-right: 50px;
       font-size: 16px;
     }
+
     .navBarBrand {
       min-height: 40px;
     }

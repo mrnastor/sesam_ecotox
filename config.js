@@ -20,13 +20,7 @@ const config = {
 		      </div>
 		    </a>
 		  </li>
-			<li>
-		    <a href="https://discordapp.com/invite/hasura" target="_blank" rel="noopener">
-		      <div class="discordBtn">
-		        <img src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/discord-brands-block.svg' alt={'Discord'}/>
-		      </div>
-		    </a>
-		  </li>`,
+			`,
     links: [{ text: '', link: '' }],
     search: {
       enabled: false,
@@ -39,10 +33,13 @@ const config = {
   sidebar: {
     forcedNavOrder: [
       '/introduction', // add trailing slash if enabled above
+      '/members',
+      '/students',
+      '/research',
       '/publications',
     ],
     collapsedNav: [
-      '/publications', // add trailing slash if enabled above
+      '/codeblock'
     ],
     links: [],
     frontline: false,
