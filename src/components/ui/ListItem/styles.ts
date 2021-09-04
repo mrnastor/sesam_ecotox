@@ -1,7 +1,8 @@
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const Timeline = styled.div`
+export const LisItem = styled.div`
   ${tw`flex flex-col sm:flex-row w-full p-4 relative border-indigo-200`};
 
   &:last-child {
@@ -34,4 +35,8 @@ export const Point = styled.span`
   ${tw`w-3 h-3 border border-indigo-200 bg-indigo-100 rounded-full absolute`};
   left: -6px;
   top: 22px;
+`;
+
+export const ExtLink = styled.a`
+  ${tw`text-xs`};
 `;

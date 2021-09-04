@@ -15,6 +15,7 @@ interface Publication {
     frontmatter: {
       title: string;
       subtitle?: string;
+      extLink?: string;
     };
   };
 }
@@ -40,6 +41,7 @@ const Publication: React.FC = () => {
             frontmatter {
               title
               subtitle
+              extLink
             }
           }
         }
@@ -54,13 +56,13 @@ const Publication: React.FC = () => {
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
 
-      <Styled.Subsection>{sectionTitle.recentLabel}</Styled.Subsection>  
+      <Styled.Subsection>{sectionTitle.recentLabel}</Styled.Subsection>
 
       {publications.map((item) => {
         const {
           id,
           html,
-          frontmatter: { title, subtitle }
+          frontmatter: { title, subtitle, extLink }
         } = item.node;
 
         return (
@@ -68,6 +70,7 @@ const Publication: React.FC = () => {
             key={id}
             title={title}
             subtitle={subtitle}
+            extLink={extLink}
           />
         );
       })}

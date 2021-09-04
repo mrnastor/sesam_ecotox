@@ -19,14 +19,14 @@ const Footer: React.FC = () => {
   }
 `);
 
-  const fbImagePath: ImageSharpFixed = fbImage.childImageSharp.fixed;  
-  
+  const fbImagePath: ImageSharpFixed = fbImage.childImageSharp.fixed;
+
   return (
     <Styled.Footer>
       <Container>
         <Styled.Links>
           <Styled.Left>
-            Copyright 2021
+            © 2021
           </Styled.Left>
           <Styled.Link
             href="https://www.facebook.com/UPLBSESAM.EcotoxLab"

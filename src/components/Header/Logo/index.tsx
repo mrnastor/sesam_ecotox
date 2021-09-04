@@ -7,7 +7,7 @@ import * as Styled from './styles';
 import { ImageSharpFluid,  ImageSharpFixed} from 'helpers/definitions';
 
 const Logo: React.FC = () => {
-  const { site, placeholderImage, subPlaceholderImage } = useStaticQuery(graphql`
+  const { site, placeholderImage, mobileImage, desktopImage } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -21,7 +21,14 @@ const Logo: React.FC = () => {
           }
         }
       }
-      subPlaceholderImage: file(relativePath: { eq: "ecotox_small.png" }) {
+      mobileImage: file(relativePath: { eq: "ecotox_logo.png" }) {
+        childImageSharp {
+          fixed(width: 180, height: 60) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      desktopImage: file(relativePath: { eq: "ecotox_small.png" }) {
         childImageSharp {
           fixed(width: 80, height: 72) {
             ...GatsbyImageSharpFixed
@@ -33,7 +40,13 @@ const Logo: React.FC = () => {
 
   const logoTitle: string = site.siteMetadata.title;
   const logoImage: ImageSharpFluid = placeholderImage.childImageSharp.fluid;
-  const subLogoImage: ImageSharpFixed = subPlaceholderImage.childImageSharp.fixed;
+  const sources = [
+    mobileImage.childImageSharp.fixed,
+    {
+      ...desktopImage.childImageSharp.fixed,
+      media: `(min-width: 768px)`,
+    },
+  ]
 
   return (
     <Styled.Logo to="/">
@@ -41,7 +54,7 @@ const Logo: React.FC = () => {
         <Img fluid={logoImage} alt={logoTitle} />
       </Styled.Image>
       <Styled.SubImage>
-        <Img fixed={subLogoImage} alt={logoTitle} />
+        <Img fixed={sources} alt={logoTitle} />
       </Styled.SubImage>
     </Styled.Logo>
   );
