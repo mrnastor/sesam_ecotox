@@ -1,0 +1,97 @@
+{
+  "title": "Students",
+  "msLabel": "Masters",
+  "phdLabel": "PhD",
+  "msStudents": [
+    {
+      "name": "Ariane T. Manlangit",
+      "thesisTopic": "Factors affecting Carbon Dioxide emissions and The Kyoto Protocol: Evidence from a Panel Data of ASEAN Members States",
+      "graduated": true
+    },
+    {
+      "name": "Ritchel M. Merencillo",
+      "thesisTopic": "Analysis of water quality and risk assessment of Cadmium, Chromium and Lead in Nile tilapia Oreochromis niloticus (Linnaeus, 1758) from Pulangi Lake, Bukidnon, Philippines",
+      "graduated": true
+    },
+    {
+      "name": "Ciara Sophia L. Roxas",
+      "thesisTopic": ""
+    },
+    {
+      "name": "Rachel E. Caldaira",
+      "thesisTopic": "Performance evaluation and social acceptability of constructed wetlands"
+    },
+    {
+      "name": "Arvin Jay S. Carandang",
+      "thesisTopic": "Socioeconomic and Environmental Assessment of Sewage Treatment Plants in Laguna de Bay"
+    },
+    {
+      "name": "Jane Marienel L. Frane",
+      "thesisTopic": ""
+    },
+    {
+      "name": "Christine Mae B. Santos",
+      "thesisTopic": "Evaluation of the Bantay ASF sa Barangay (BABay ASF) program implementation in managing African Swine Fever in selected areas in Batangas, Philippines using Ecohealth/One health Framework"
+    },
+    {
+      "name": "Mark Joseph B. Singcay",
+      "thesisTopic": "Development of Effective Wastewater Management Plan based on Evaluation of the Current Sanitation Status for Sta. Cruz, Laguna"
+    },
+    {
+      "name": "Maris Asuncion L. Bayhon",
+      "thesisTopic": "Biopolymer/ Nanosilica-Functionalized Superparamagnetic Iron Oxide Nanoparticles for Heavy Metal Remediation of Ground Water"
+    },
+    {
+      "name": "Aldouse Glenri H. Baliton",
+      "thesisTopic": "The effects of microplastics on terrestrial environments and its implications in the management of plastic wastes in the Philippines, an exploratory study"
+    },
+    {
+      "name": "Andro M. Enovejas",
+      "thesisTopic": "Application of Abaca fiber waste as biosorbent and activated carbon for the removal of heavy metal Copper in wastewater"
+    },
+    {
+      "name": "Alan Royce Tizon",
+      "thesisTopic": "Assessment of heavy metal pollution in sediments using chemical and bacterial indicators in Agusan river"
+    },
+    {
+      "name": "Karla Sambajon",
+      "thesisTopic": "Mussel (Perna canaliculus) Shell and Eggshell as Motorcycle and Tricycle Exhaust Filter"
+    },
+    {
+      "name": "Ronnel Nolos",
+      "thesisTopic": "Pollution Characteristics, Ecological, and Health Risks Assessment of Heavy Metal Pollution in the Soil of Mogpog, Marinduque, Philippines."
+    },
+    {
+      "name": "Antoinette Tangcangco",
+      "thesisTopic": ""
+    },
+    {
+      "name": "Ma. Ellaine Erika L. Simon",
+      "thesisTopic": "Assessment of the Current Impacts of Mine Waste Pollution on the Aquatic Ecosystem of Rapu-Rapu Island, Albay, Philippines"
+    },
+    {
+      "name": "Brenda Lhyn D. Aquino",
+      "thesisTopic": "Phytoremediation of metal-contaminated soil at mining areas: potential of native bamboo species"
+    }
+  ],
+  "phdStudents": [
+    {
+      "name": "Phouthasone Khouangvichit",
+      "thesisTopic": "Assessment of Climate Change impact on Bueng Eor Marsh Communities in Xaybouly District, Savannakhet Province, Lao PDR"
+    },
+    {
+      "name": "Melanie M. Garcia",
+      "thesisTopic": "Phytoremediation Potential of Pongamia pinnata (L.) Pierre Inoculated with Plant Growth-Promoting Rhizobacteria (PGPR) Amended with Biochar for Gold Mine Tailings of Davao de Oro”"
+    },
+    {
+      "name": "Thucydades S. Nacus",
+      "thesisTopic": "Household expired and unwanted over-the-counter (OTC) pharmaceuticals in Panabo City: Examining the externalities of the common practice of disposal”"
+    },
+    {
+      "name": "Cristian Ryan Argamino",
+      "thesisTopic": "Environmental Risk Assessment of Perfluoroalkyl Substances (PFASs) in Laguna de Bay (South Bay), Philippines”"
+    }
+  ] 
+}
+
+	
