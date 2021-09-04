@@ -63,14 +63,12 @@ const Members: React.FC = () => {
           }
         }
       }
-      
+
     }
   `);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const members: Member[] = allMarkdownRemark.edges;
-
-  console.log('mme', members)
 
   return (
     <Container section>
