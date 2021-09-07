@@ -1,6 +1,6 @@
 {
   "title": "Students",
-  "msLabel": "Masters",
+  "msLabel": "MS",
   "phdLabel": "PhD",
   "msStudents": [
     {
@@ -91,7 +91,6 @@
       "name": "Cristian Ryan Argamino",
       "thesisTopic": "Environmental Risk Assessment of Perfluoroalkyl Substances (PFASs) in Laguna de Bay (South Bay), Philippines”"
     }
-  ] 
+  ]
 }
 
-	
