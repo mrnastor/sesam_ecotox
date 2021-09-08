@@ -28,6 +28,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
             title
             description
             author
+            googleVerification
           }
         }
       }
@@ -35,6 +36,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
+  const gVerify = site.siteMetadata.googleVerification || '';
 
   return (
     <Helmet
@@ -47,6 +49,10 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         {
           name: `description`,
           content: metaDescription
+        },
+        {
+          name: `google-site-verification`,
+          content: gVerify
         },
         {
           property: `og:title`,

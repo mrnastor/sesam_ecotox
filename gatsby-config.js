@@ -5,7 +5,8 @@ module.exports = {
     title: `SESAM Ecotox Lab`,
     description: `UPLB SESAM Ecotox Lab`,
     author: `Mark Benson Nastor`,
-    siteUrl: `${siteUrl}`
+    siteUrl: `${siteUrl}`,
+    googleVerification: 'NHCMOl5J5DMZgGwQe33gjwjBA6pVXtcyesbFkBBNt18'
   },
   plugins: [
     `gatsby-plugin-typescript`,
