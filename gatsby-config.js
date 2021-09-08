@@ -68,7 +68,7 @@ module.exports = {
       options: {
         host: siteUrl,
         sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-        resolveEnv: () => process.env.GATSBY_ENV,
+        resolveEnv: () => 'production',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
