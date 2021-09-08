@@ -1,8 +1,11 @@
+const siteUrl = process.env.URL || `https://sesam-ecotox.netlify.app`
+
 module.exports = {
   siteMetadata: {
     title: `SESAM Ecotox Lab`,
     description: `UPLB SESAM Ecotox Lab`,
-    author: `Mark Benson Nastor`
+    author: `Mark Benson Nastor`,
+    siteUrl: `${siteUrl}`
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -53,6 +56,29 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-tailwindcss`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      excludes: ['/blog/*'],
+      options: {
+        output: '/sitemap'
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
