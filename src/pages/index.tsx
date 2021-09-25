@@ -12,7 +12,7 @@ const IndexPage: React.FC = () => {
       <SEO title="About Our Lab" />
       <HeroCarousel />
       <HeroBanner />
-      {/* <Services /> */}
+      <Services />
       <hr />
       {/* <Testimonials /> */}
     </Layout>
