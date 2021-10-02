@@ -20,7 +20,7 @@ interface Member {
       rank: string;
       image: {
         childImageSharp: {
-          fluid: ImageSharpFluid;
+          gatsbyImageData: ImageSharpFluid;
         };
       };
     };
@@ -54,9 +54,9 @@ const Members: React.FC = () => {
               position
               image {
                 childImageSharp {
-                  fluid(maxWidth: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 200
+                  )
                 }
               }
             }

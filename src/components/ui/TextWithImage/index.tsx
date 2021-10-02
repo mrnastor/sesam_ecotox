@@ -1,6 +1,6 @@
 import { ImageSharpFluid } from 'helpers/definitions';
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styled from './styles';
 
@@ -10,7 +10,7 @@ interface Props {
   position: string;
   image: {
     childImageSharp: {
-      fluid: ImageSharpFluid;
+      gatsbyImageData: ImageSharpFluid;
     };
   };
 }
@@ -18,7 +18,7 @@ interface Props {
 const TextWithImage: React.FC<Props> = ({ name, nick, position, image}) => (
   <Styled.TextWithImage>
     <Styled.Image>
-      <Img fluid={image.childImageSharp.fluid} alt={nick} />
+      <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt={nick} />
     </Styled.Image>
     <Styled.Point />
     <Styled.Details>

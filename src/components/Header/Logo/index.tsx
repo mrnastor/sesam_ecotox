@@ -1,13 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage, withArtDirection } from "gatsby-plugin-image"
 
 import * as Styled from './styles';
 
 import { ImageSharpFluid,  ImageSharpFixed} from 'helpers/definitions';
 
 const Logo: React.FC = () => {
-  const { site, placeholderImage, mobileImage, desktopImage } = useStaticQuery(graphql`
+  const queryRes = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -16,45 +16,52 @@ const Logo: React.FC = () => {
       }
       placeholderImage: file(relativePath: { eq: "sesam_logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 80) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(
+            width: 80
+          )
         }
       }
       mobileImage: file(relativePath: { eq: "ecotox_logo.png" }) {
         childImageSharp {
-          fixed(width: 180, height: 60) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(
+            height: 60
+            quality: 80
+          )
         }
       }
       desktopImage: file(relativePath: { eq: "ecotox_small.png" }) {
         childImageSharp {
-          fixed(width: 80, height: 72) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(
+            height: 72
+          )
         }
       }
     }
   `);
 
+  const { site, placeholderImage } = queryRes
+  const mobileImage = queryRes.mobileImage!
+  const desktopImage = queryRes.desktopImage!
+
+
   const logoTitle: string = site.siteMetadata.title;
-  const logoImage: ImageSharpFluid = placeholderImage.childImageSharp.fluid;
-  const sources = [
-    mobileImage.childImageSharp.fixed,
+  const logoImage: ImageSharpFluid = placeholderImage.childImageSharp.gatsbyImageData;
+
+  // @ts-ignore
+  const sources = withArtDirection(getImage(desktopImage.childImageSharp.gatsbyImageData), [
     {
-      ...desktopImage.childImageSharp.fixed,
-      media: `(min-width: 768px)`,
+      media: "(max-width: 480px)",
+      image: getImage(mobileImage.childImageSharp.gatsbyImageData),
     },
-  ]
+  ])
 
   return (
     <Styled.Logo to="/">
       <Styled.Image>
-        <Img fluid={logoImage} alt={logoTitle} />
+        <GatsbyImage image={logoImage} alt={logoTitle} />
       </Styled.Image>
       <Styled.SubImage>
-        <Img fixed={sources} alt={logoTitle} />
+        <GatsbyImage className="art-directed" image={sources} alt={logoTitle} />
       </Styled.SubImage>
     </Styled.Logo>
   );

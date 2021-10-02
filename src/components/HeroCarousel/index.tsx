@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Loadable from '@loadable/component';
 
 import { ImageSharpFluid } from 'helpers/definitions';
@@ -17,7 +17,7 @@ interface HeroCarousel {
       title: string;
       cover: {
         childImageSharp: {
-          fluid: ImageSharpFluid;
+          gatsbyImageData: ImageSharpFluid;
         };
       };
     };
@@ -36,9 +36,10 @@ const HeroCarousel: React.FC = () => {
               title
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 200, maxHeight: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    height: 300
+                    width: 500
+                  )
                 }
               }
             }
@@ -63,7 +64,7 @@ const HeroCarousel: React.FC = () => {
             return (
               <Styled.Testimonial key={id}>
                 <Styled.Image>
-                  <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                  <GatsbyImage image={cover.childImageSharp.gatsbyImageData} alt={title} />
                 </Styled.Image>
               </Styled.Testimonial>
             );

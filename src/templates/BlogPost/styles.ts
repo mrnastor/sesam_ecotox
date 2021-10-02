@@ -12,3 +12,7 @@ export const Image = styled.figure`
 export const Links = styled.div`
   ${tw`w-full flex justify-between mt-10`};
 `;
+
+export const SGallery = styled.div`
+  ${tw`mt-5`};
+`

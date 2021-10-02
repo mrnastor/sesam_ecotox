@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Container from 'components/ui/Container';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import * as Styled from './styles';
 import { ImageSharpFixed } from 'helpers/definitions';
@@ -11,15 +11,17 @@ const Footer: React.FC = () => {
   query {
     fbImage: file(relativePath: { eq: "fbicon.png" }) {
       childImageSharp {
-        fixed(width: 24, height: 24) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(
+          layout: FIXED
+          width: 24
+          height: 24
+        )
       }
     }
   }
 `);
 
-  const fbImagePath: ImageSharpFixed = fbImage.childImageSharp.fixed;
+  const fbImagePath: ImageSharpFixed = fbImage.childImageSharp.gatsbyImageData;
 
   return (
     <Styled.Footer>
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
             target="_blank"
           >
             <Styled.Image>
-              <Img fixed={fbImagePath} alt={'Facebook'} />
+              <GatsbyImage image={fbImagePath} alt={'Facebook'} />
             </Styled.Image>
           </Styled.Link>
         </Styled.Links>

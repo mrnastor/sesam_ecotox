@@ -24,4 +24,10 @@ export const SubImage = styled.figure`
   img {
     ${tw``};
   }
+
+  @media screen and (max-width: 480px) {
+    .art-directed {
+      width: 220px;
+    }
+  }
 `;

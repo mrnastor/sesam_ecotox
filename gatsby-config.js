@@ -9,6 +9,7 @@ module.exports = {
     googleVerification: 'NHCMOl5J5DMZgGwQe33gjwjBA6pVXtcyesbFkBBNt18'
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
@@ -41,6 +42,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          quality: 80,
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

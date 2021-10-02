@@ -1,8 +1,8 @@
-import { FluidObject, FixedObject } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
-export type ImageSharpFluid = FluidObject | FluidObject[] | undefined;
+export type ImageSharpFluid = IGatsbyImageData;
 
-export type ImageSharpFixed = FixedObject | FixedObject[] | undefined;
+export type ImageSharpFixed = IGatsbyImageData;
 
 export type ObjectType = Record<string, any>;
 
