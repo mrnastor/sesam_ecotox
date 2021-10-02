@@ -13,3 +13,13 @@ export interface SectionTitle {
   staffLabel?: string;
   recentLabel?: string;
 }
+
+export interface GalleryImage {
+  childImageSharp: {
+    thumb: IGatsbyImageData
+    full: IGatsbyImageData
+    meta: {
+      originalName: string
+    }
+  }
+}

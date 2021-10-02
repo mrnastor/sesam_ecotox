@@ -9,17 +9,7 @@ import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
 import * as Styled from './styles';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-
-interface GalleryImage {
-  childImageSharp: {
-    thumb: IGatsbyImageData
-    full: IGatsbyImageData
-    meta: {
-      originalName: string
-    }
-  }
-}
+import { GalleryImage } from 'helpers/definitions';
 
 interface Post {
   html: React.ReactNode;

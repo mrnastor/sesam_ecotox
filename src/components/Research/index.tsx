@@ -5,7 +5,9 @@ import ListItem from 'components/ui/ListItem';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 
-import { SectionTitle } from 'helpers/definitions';
+import { GalleryImage, SectionTitle } from 'helpers/definitions';
+import Gallery from '@browniebroke/gatsby-image-gallery';
+import * as Styled from './styles';
 
 interface Research {
   node: {
@@ -13,6 +15,7 @@ interface Research {
     html: React.ReactNode;
     frontmatter: {
       title: string;
+      posterImages : GalleryImage[]
     };
   };
 }
@@ -36,6 +39,19 @@ const Research: React.FC = () => {
             html
             frontmatter {
               title
+              posterImages {
+                childImageSharp {
+                  thumb: gatsbyImageData(
+                    width: 500
+                    height: 270
+                    placeholder: BLURRED
+                  )
+                  full: gatsbyImageData(layout: FULL_WIDTH)
+                  meta: fixed {
+                    originalName
+                  }
+                }
+              }
             }
           }
         }
@@ -44,24 +60,34 @@ const Research: React.FC = () => {
   `);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const experiences: Research[] = allMarkdownRemark.edges;
+  const researches: Research[] = allMarkdownRemark.edges;
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
 
-      {experiences.map((item) => {
+      {researches.map((item) => {
         const {
           id,
           html,
-          frontmatter: { title }
+          frontmatter: { title, posterImages }
         } = item.node;
 
+        const images = posterImages && posterImages.map((node) => {
+          return {
+             ...node.childImageSharp,
+             caption: node.childImageSharp.meta.originalName,
+          }
+        })
+
         return (
-          <ListItem
-            key={id}
-            title={title}
-          />
+          <>
+            <ListItem
+              key={id}
+              title={title}
+            />
+            {images && <Gallery images={images} customWrapper={Styled.PGallery} /> }
+          </>
         );
       })}
     </Container>

@@ -8,6 +8,7 @@ interface Props {
   name: string;
   nick: string;
   position: string;
+  email: string;
   image: {
     childImageSharp: {
       gatsbyImageData: ImageSharpFluid;
@@ -15,7 +16,7 @@ interface Props {
   };
 }
 
-const TextWithImage: React.FC<Props> = ({ name, nick, position, image}) => (
+const TextWithImage: React.FC<Props> = ({ name, nick, position, image, email}) => (
   <Styled.TextWithImage>
     <Styled.Image>
       <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt={nick} />
@@ -25,6 +26,7 @@ const TextWithImage: React.FC<Props> = ({ name, nick, position, image}) => (
       <Styled.Name>{name}</Styled.Name>
       <Styled.NickName>{nick}</Styled.NickName>
       <Styled.Position>{position}</Styled.Position>
+      <Styled.Email href={`mailto:${email}`}>{email}</Styled.Email>
     </Styled.Details>
     {/* <Styled.Content>{content}</Styled.Content> */}
   </Styled.TextWithImage>

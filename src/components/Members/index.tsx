@@ -18,6 +18,7 @@ interface Member {
       nick: string;
       position: string;
       rank: string;
+      email: string;
       image: {
         childImageSharp: {
           gatsbyImageData: ImageSharpFluid;
@@ -52,6 +53,7 @@ const Members: React.FC = () => {
               nick
               rank
               position
+              email
               image {
                 childImageSharp {
                   gatsbyImageData(
@@ -80,7 +82,7 @@ const Members: React.FC = () => {
         const {
           id,
           html,
-          frontmatter: { name, nick, position, image }
+          frontmatter: { name, nick, position, image, email }
         } = item.node;
 
         return (
@@ -90,6 +92,7 @@ const Members: React.FC = () => {
             nick={nick}
             position={position}
             image={image}
+            email={email}
           />
         );
       })}
@@ -100,7 +103,7 @@ const Members: React.FC = () => {
         const {
           id,
           html,
-          frontmatter: { name, nick, position, image }
+          frontmatter: { name, nick, position, image, email }
         } = item.node;
 
         return (
@@ -110,6 +113,7 @@ const Members: React.FC = () => {
             nick={nick}
             position={position}
             image={image}
+            email={email}
           />
         );
       })}

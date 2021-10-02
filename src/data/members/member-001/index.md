@@ -6,6 +6,7 @@ name: 'Dr. Janice B. Sevilla-Nastor'
 nick: 'Doc Bugen'
 position: 'Assistant Professor 6'
 image: './bugen.png'
+email: 'jbsevillanastor@up.edu.ph'
 ---
 
 Bugen

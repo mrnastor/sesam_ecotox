@@ -39,3 +39,7 @@ export const Point = styled.span`
 export const Image = styled.figure`
   ${tw`w-40 h-40 mr-10`};
 `;
+
+export const Email = styled.a`
+  ${tw`text-xs`};
+`;
