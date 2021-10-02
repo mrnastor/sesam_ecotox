@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ListItem from 'components/ui/ListItem';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
-import FormatHtml from 'components/utils/FormatHtml';
 
 import { SectionTitle } from 'helpers/definitions';
 

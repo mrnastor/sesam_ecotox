@@ -24,9 +24,35 @@ interface HeroCarousel {
   };
 }
 
+interface CarouselImage {
+  childImageSharp: {
+    gatsbyImageData: ImageSharpFluid;
+  };
+}
+
+interface FrontMatter {
+  title: string;
+  subtitle: string;
+  images: CarouselImage[]
+}
+
 const HeroCarousel: React.FC = () => {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark } = useStaticQuery(graphql`
     query {
+      markdownRemark(frontmatter: { category: { eq: "carousel section" } }) {
+        frontmatter {
+          title
+          subtitle
+          images {
+            childImageSharp {
+              gatsbyImageData(
+                height: 300
+                width: 500
+              )
+            }
+          }
+        }
+      }
       allMarkdownRemark(filter: { frontmatter: { category: { eq: "carousel" } } }) {
         edges {
           node {
@@ -49,22 +75,21 @@ const HeroCarousel: React.FC = () => {
     }
   `);
 
-  const testimonials: HeroCarousel[] = allMarkdownRemark.edges;
+  const fmatter: FrontMatter = markdownRemark.frontmatter;
 
   return (
     <Styled.CaroContainer section>
       <Styled.Testimonials>
         <Carousel>
-          {testimonials.map((item) => {
+          {fmatter.images.map((item, index) => {
             const {
-              id,
-              frontmatter: { cover, title }
-            } = item.node;
+              gatsbyImageData
+            } = item.childImageSharp;
 
             return (
-              <Styled.Testimonial key={id}>
+              <Styled.Testimonial key={index}>
                 <Styled.Image>
-                  <GatsbyImage image={cover.childImageSharp.gatsbyImageData} alt={title} />
+                  <GatsbyImage image={gatsbyImageData} alt={''} />
                 </Styled.Image>
               </Styled.Testimonial>
             );

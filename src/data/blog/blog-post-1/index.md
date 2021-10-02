@@ -6,6 +6,7 @@ description: 'Ecotox lab conducted an emergency fieldwork to reinforce sampling 
 date: '2021-09-08'
 tags: []
 published: true
+latest: true
 galleryImages: [
   './in_action_001.jpg',
   './in_action_002.jpg',

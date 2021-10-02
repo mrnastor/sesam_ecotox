@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import HeroBanner from 'components/HeroBanner';
-import Services from 'components/Services';
+import Activities from 'components/Activities';
 import HeroCarousel from 'components/HeroCarousel';
 
 const IndexPage: React.FC = () => {
@@ -12,7 +12,7 @@ const IndexPage: React.FC = () => {
       <SEO title="About Our Lab" />
       <HeroCarousel />
       <HeroBanner />
-      <Services />
+      <Activities />
       <hr />
       {/* <Testimonials /> */}
     </Layout>

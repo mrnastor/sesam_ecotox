@@ -29,6 +29,7 @@ interface Post {
   frontmatter: {
     title: string;
     date: string;
+    latest?: boolean;
     galleryImages : GalleryImage[]
   };
 }
@@ -48,7 +49,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
 
-  const images = post.frontmatter.galleryImages.map((node) => {
+  const images = post.frontmatter.galleryImages && post.frontmatter.galleryImages.map((node) => {
     return {
        ...node.childImageSharp,
        caption: node.childImageSharp.meta.originalName,
@@ -61,12 +62,14 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
       <Container section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
         <FormatHtml content={post.html} />
+        { images &&
         <Styled.SGallery>
           <Gallery images={images}/>
         </Styled.SGallery>
+        }
         <Styled.Links>
           <span>
-            {previous && (
+            {previous && !post.frontmatter.latest && (
               <Link to={previous.fields.slug} rel="previous">
                 ← {previous.frontmatter.title}
               </Link>
@@ -94,6 +97,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")
+        latest
         galleryImages {
           childImageSharp {
             thumb: gatsbyImageData(
