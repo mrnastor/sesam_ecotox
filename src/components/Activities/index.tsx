@@ -7,6 +7,7 @@ import TitleSection from 'components/ui/TitleSection';
 
 import { ImageSharpFluid, SectionTitle } from 'helpers/definitions';
 import DateListItem from 'components/ui/DateListItem';
+import * as Styled from './styles';
 
 interface Activity {
   node: {
@@ -72,15 +73,15 @@ const Activities: React.FC = () => {
 
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      <Styled.ActLink to="/blog">
+        <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      </Styled.ActLink>
       {activities.map((item) => {
         const {
           id,
           fields: { slug },
           frontmatter: { title, date }
         } = item.node;
-
-        console.log('item', item.node)
 
         return (
           <Link to={slug}>
@@ -93,20 +94,6 @@ const Activities: React.FC = () => {
           </Link>
         );
       })}
-      {/* <Styled.Services>
-        {services.map((item) => {
-          const {
-            id,
-            frontmatter: { title, icon, description }
-          } = item.node;
-
-          return (
-            <Styled.ServiceItem key={id}>
-              <InfoBlock icon={icon} title={title} content={description} />
-            </Styled.ServiceItem>
-          );
-        })}
-      </Styled.Services> */}
     </Container>
   );
 };

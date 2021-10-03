@@ -19,15 +19,11 @@ export const Image = styled.figure`
 `;
 
 export const SubImage = styled.figure`
-  ${tw`w-16 h-16 mr-3`};
-
-  img {
-    ${tw``};
-  }
+  ${tw`w-48 h-16 mr-3 md:w-16`};
 
   @media screen and (max-width: 480px) {
     .art-directed {
-      width: 220px;
+      min-width: 208px;
     }
   }
 `;

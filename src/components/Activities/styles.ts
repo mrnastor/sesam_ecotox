@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+import Link from 'gatsby-link';
 
-export const Date = styled.h3`
-  ${tw`text-xs text-indigo-500`};
+export const ActLink = styled(Link)`
+  ${tw`w-full`};
+  color: #000000;
 `;

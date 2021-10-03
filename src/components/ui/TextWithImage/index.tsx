@@ -28,7 +28,6 @@ const TextWithImage: React.FC<Props> = ({ name, nick, position, image, email}) =
       <Styled.Position>{position}</Styled.Position>
       <Styled.Email href={`mailto:${email}`}>{email}</Styled.Email>
     </Styled.Details>
-    {/* <Styled.Content>{content}</Styled.Content> */}
   </Styled.TextWithImage>
 );
 

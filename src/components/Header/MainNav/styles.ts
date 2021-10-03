@@ -32,6 +32,10 @@ export const MainNavItem = motion.custom(styled(Link)`
     ${tw`visible`};
     transform: scaleX(1);
   }
+
+  &:first-child {
+    margin-left: 0;
+  }
 `);
 
 export const ToogleMainNav = styled.button<StyledProps>`

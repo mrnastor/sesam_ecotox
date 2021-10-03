@@ -24,7 +24,7 @@ const Logo: React.FC = () => {
       mobileImage: file(relativePath: { eq: "ecotox_logo.png" }) {
         childImageSharp {
           gatsbyImageData(
-            height: 60
+            width: 300
             quality: 80
           )
         }

@@ -42,4 +42,5 @@ export const Image = styled.figure`
 
 export const Email = styled.a`
   ${tw`text-xs`};
+  display: block
 `;

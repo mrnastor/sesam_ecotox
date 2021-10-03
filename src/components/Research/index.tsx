@@ -86,7 +86,11 @@ const Research: React.FC = () => {
               key={id}
               title={title}
             />
-            {images && <Gallery images={images} customWrapper={Styled.PGallery} /> }
+            {images &&
+              <Styled.PGallery>
+                <Gallery images={images}/>
+              </Styled.PGallery>
+            }
           </>
         );
       })}
